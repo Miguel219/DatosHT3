@@ -2,7 +2,12 @@ package application;
 
 import java.util.Arrays;
 
-/**Referencia:
+/**
+ * Silvio Orozco 18282
+ * Jose Castaneda 18161
+ * Roberto Castillo 185546
+ *
+ *Referencia:
  * @author Devesh Agrawal
  * Extraido de: https://www.geeksforgeeks.org/java-program-for-radix-sort/
  */
