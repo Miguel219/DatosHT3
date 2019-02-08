@@ -6,7 +6,12 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-
+/**
+ * Silvio Orozco 18282
+ * Jose Castaneda 18161
+ * Roberto Castillo 185546
+ * Hoja de Trabajo 3 	Sorts y Big O	8/2/2019
+ */
 public class Main {
 	public static void main(String [ ] args){
 	   
