@@ -18,8 +18,8 @@ public class GnomeSort {
         int index=1; //start of search
         int temp;
         while(index<nums.length){ //until the array is fully sorted
-            if((((Index)nums[index]).getNum())<((Index)nums[index-1]).getNum()){ //compares nums[index] with nums[index-1]. if smaller, switch.
-                temp=((Index)nums[index]).getNum();
+            if(nums[index].compareTo(nums[index-1])<0){ //compares nums[index] with nums[index-1]. if smaller, switch.
+                temp=(int) nums[index];
                 nums[index]=nums[index-1];
                 nums[index-1]=temp;
                 index--; //must decrease index to recheck. since they have been swapped, the array may still be out of order

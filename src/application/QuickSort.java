@@ -13,10 +13,10 @@ package application;
 
 public class QuickSort {
      
-    private static int[] array;
+    private static Comparable[] array;
     private static int length;
  
-    static int[] sort(int[] inputArr) {
+    static Comparable[] sort(Comparable[] inputArr) {
          
         if (inputArr == null || inputArr.length == 0) {
             return null;
@@ -32,7 +32,7 @@ public class QuickSort {
         int i = lowerIndex;
         int j = higherIndex;
         // calculate pivot number, I am taking pivot as middle index number
-        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+        int pivot = (int) array[lowerIndex+(higherIndex-lowerIndex)/2];
         // Divide into two arrays
         while (i <= j) {
             /**
@@ -41,10 +41,10 @@ public class QuickSort {
              * from right side which is less then the pivot value. Once the search
              * is done, then we exchange both numbers.
              */
-            while (array[i] < pivot) {
+            while (array[i].compareTo(pivot)<0) {
                 i++;
             }
-            while (array[j] > pivot) {
+            while (array[j].compareTo(pivot)>0) {
                 j--;
             }
             if (i <= j) {
@@ -62,7 +62,7 @@ public class QuickSort {
     }
  
     static void exchangeNumbers(int i, int j) {
-        int temp = array[i];
+        int temp = (int) array[i];
         array[i] = array[j];
         array[j] = temp;
     }

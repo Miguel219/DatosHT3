@@ -14,27 +14,27 @@ package application;
 
 public class MergeSort{
 	
-    private static int[] merge(int[] a, int[] b) {
-        int[] c = new int[a.length + b.length];
+    private static Comparable[] merge(Comparable[] a, Comparable[] b) {
+        Comparable[] c = new Comparable[a.length + b.length];
         int i = 0, j = 0;
         for (int k = 0; k < c.length; k++) {
-            if      (i >= a.length) c[k] = b[j++];
-            else if (j >= b.length) c[k] = a[i++];
-            else if (a[i] <= b[j])  c[k] = a[i++];
-            else                    c[k] = b[j++];
+            if      (i >= a.length) c[k] = (int) b[j++];
+            else if (j >= b.length) c[k] = (int) a[i++];
+            else if (a[i].compareTo(b[j])<=0)  c[k] = (int) a[i++];
+            else                    c[k] = (int) b[j++];
         }
         return c;
     }
  	
-    public static int[] mergesort(int[] input) {
+    public static Comparable[] mergesort(Comparable[] input) {
         int N = input.length;
         if (N <= 1) return input;
-        int[] a = new int[N/2];
-        int[] b = new int[N - N/2];
+        Integer[] a = new Integer[N/2];
+        Integer[] b = new Integer[N - N/2];
         for (int i = 0; i < a.length; i++)
-            a[i] = input[i];
+            a[i] = (Integer) input[i];
         for (int i = 0; i < b.length; i++)
-            b[i] = input[i + N/2];
+            b[i] = (Integer) input[i + N/2];
         return merge(mergesort(a), mergesort(b));
     }
     
