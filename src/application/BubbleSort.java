@@ -10,18 +10,21 @@ package application;
 public class BubbleSort 
 {
     
-    public static Comparable[] bubble(Comparable[] A)
+    public static Comparable[] bubble(Comparable [] A)
     {
          int i, j, aux;
          for(i=0;i<A.length-1;i++)
               for(j=0;j<A.length-i-1;j++)
-                   if(((Index)A[j+1]).getNum()<((Index)A[j]).getNum()){
-                      aux=((Index)A[j+1]).getNum();
-                      ((Index)A[j+1]).setNum(((Index)A[j]).getNum());
-                      ((Index)A[j]).setNum(aux);
+                   if(A[j+1].compareTo(A[j])<0){
+                      aux=(int) A[j+1];
+                      A[j+1]=A[j];
+                      A[j]=aux;
                    }
     return A;
-    }    
+    }
+    
+    
+    
     
     
 }
