@@ -17,8 +17,8 @@ public class BubbleSort
               for(j=0;j<A.length-i-1;j++)
                    if(((Index)A[j+1]).getNum()<((Index)A[j]).getNum()){
                       aux=((Index)A[j+1]).getNum();
-                      A[j+1]=A[j];
-                      A[j]=aux;
+                      ((Index)A[j+1]).setNum(((Index)A[j]).getNum());
+                      ((Index)A[j]).setNum(aux);
                    }
     return A;
     }    
