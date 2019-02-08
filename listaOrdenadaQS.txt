@@ -1,0 +1,10 @@
+Dato1: 2
+Dato2: 2
+Dato3: 3
+Dato4: 5
+Dato5: 5
+Dato6: 5
+Dato7: 5
+Dato8: 6
+Dato9: 9
+Dato10: 9

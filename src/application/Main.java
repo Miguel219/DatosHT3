@@ -1,16 +1,12 @@
 package application;
+
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
-
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 
-/**
- * Silvio Orozco 18282
- * Jose Castaneda 18161
- * Roberto Castillo 185546
- * Hoja de Trabajo 3 	Sorts y Big O	8/2/2019
- */
 public class Main {
 	public static void main(String [ ] args){
 	   
@@ -40,21 +36,29 @@ public class Main {
 		}while(error==true);
 		//Una vez el dato es entero creamos el numero Random.
 		int random;
-		//
-		Index[] lista= new Index[cantidad]; 
-		
-		for(int i = 0; i < lista.length; i = i + 1)
+		Integer[] listaBS = new Integer[cantidad]; 
+		Integer[] listaQS = new Integer[cantidad];
+		Integer[] listaRS = new Integer[cantidad];
+		Integer[] listaMS = new Integer[cantidad];
+		Integer[] listaGS = new Integer[cantidad];
+		Integer[] lista = new Integer[cantidad]; 
+		for(int i = 0; i < cantidad; i = i + 1)
 		{
 			random=(int) (Math.random() * (cantidad-1)) + 1;
-			System.out.println(random);
-			lista[i]= new Index(random);
+			lista[i]=(random);
+			listaQS[i]=(random);
+			listaBS[i]=(random);
+			listaRS[i]=(random);
+			listaGS[i]=(random);
+			listaMS[i]=(random);
 			
 		}
+		
 		//Imprimimos la lista original en un archivo txt.
             try {
 				impresora=new PrintWriter("listaOriginal.txt", "UTF-8");
 				for (int i = 0; i < lista.length; i++){
-                	impresora.println("Dato" + (i+1) +": " +(lista[i].getNum()));
+                impresora.println("Dato" + (i+1) +": " +lista[i]);
                 }
 			} catch (FileNotFoundException | UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
@@ -63,13 +67,102 @@ public class Main {
 				impresora.close();
             }
             
-        
+         
         
    		 
 		
 		
 
-
-		System.out.println("Lista original y lista ordenada han sido impresas en archivos txt.");
+		//Pruebas de algoritmos
+		//Bubble Sort
+		Integer[] listaOrdenadaBS = (Integer[]) BubbleSort.bubble(listaBS);
+			
+		//Gnome Sort
+		Integer[] listaOrdenadaGS = (Integer[])GnomeSort.gnomeSort(listaGS);
+			
+		//Merge Sort
+		Comparable[] listaOrdenadaMS = MergeSort.mergesort(listaMS);
+				
+		//Quick Sort
+		Integer[] listaOrdenadaQS = (Integer[])QuickSort.sort(listaQS);
+				
+		//Radix Sort
+		Integer[] listaOrdenadaRS = (Integer[])RadixSort.radixsort(listaRS, listaRS.length);
+				
+		
+		
+		BubbleSort.bubble(listaOrdenadaBS);
+		GnomeSort.gnomeSort(listaOrdenadaGS);
+		MergeSort.mergesort(listaOrdenadaMS);
+		QuickSort.sort(listaOrdenadaQS);
+		RadixSort.radixsort(listaOrdenadaRS, listaOrdenadaRS.length);
+		
+		
+		//Imprimimos la lista final en un archivo txt.
+            try {
+				impresora=new PrintWriter("listaOrdenadaBS.txt", "UTF-8");
+				for (int i = 0; i < listaOrdenadaBS.length; i++){
+                	impresora.println("Dato" + (i+1) +": " +listaOrdenadaBS[i]);
+                }
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally{
+				impresora.close();
+			}
+		//
+		//Imprimimos la lista final en un archivo txt.
+            try {
+				impresora=new PrintWriter("listaOrdenadaGS.txt", "UTF-8");
+				for (int i = 0; i < listaOrdenadaGS.length; i++){
+                impresora.println("Dato" + (i+1) +": " +listaOrdenadaGS[i]);
+                }
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally{
+				impresora.close();
+			}
+			//
+			//Imprimimos la lista final en un archivo txt.
+            try {
+				impresora=new PrintWriter("listaOrdenadaMS.txt", "UTF-8");
+				for (int i = 0; i < listaOrdenadaMS.length; i++){
+                impresora.println("Dato" + (i+1) +": " +listaOrdenadaMS[i]);
+                }
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally{
+				impresora.close();
+			}
+			//
+			//Imprimimos la lista final en un archivo txt.
+            try {
+				impresora=new PrintWriter("listaOrdenadaQS.txt", "UTF-8");
+				for (int i = 0; i < listaOrdenadaQS.length; i++){
+                impresora.println("Dato" + (i+1) +": " +listaOrdenadaQS[i]);
+                }
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally{
+				impresora.close();
+			}	
+			//
+			//Imprimimos la lista final en un archivo txt.
+            try {
+				impresora=new PrintWriter("listaOrdenadaRS.txt", "UTF-8");
+				for (int i = 0; i < listaOrdenadaRS.length; i++){
+                impresora.println("Dato" + (i+1) +": " +listaOrdenadaRS[i]);
+                }
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally{
+				impresora.close();
+			}
+		System.out.println("Lista original y final han sido impresas.");
+		leer.next();
 	}
 }

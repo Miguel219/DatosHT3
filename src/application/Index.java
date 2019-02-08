@@ -4,7 +4,7 @@ package application;
  * Jose Castaneda 18161
  * Roberto Castillo 185546
  */
-public class Index implements Comparable {
+public class Index implements Comparable<Index> {
 
 	private int num;
 	
@@ -30,8 +30,10 @@ public class Index implements Comparable {
 		this.num = num;
 	}
 
+
+
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Index o) {
 		// TODO Auto-generated method stub
 		return Integer.compare(this.num, ((Index)o).getNum());
 	}

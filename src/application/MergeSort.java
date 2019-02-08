@@ -15,7 +15,7 @@ package application;
 public class MergeSort{
 	
     private static Comparable[] merge(Comparable[] a, Comparable[] b) {
-        Comparable[] c = new Comparable[a.length + b.length];
+    	Comparable[] c = new Comparable[a.length + b.length];
         int i = 0, j = 0;
         for (int k = 0; k < c.length; k++) {
             if      (i >= a.length) c[k] = (int) b[j++];
@@ -39,9 +39,9 @@ public class MergeSort{
     }
     
     //Check if array is sorted
-    private static boolean isSorted(double[] a) {
+    private static boolean isSorted(Comparable[] a) {
         for (int i = 1; i < a.length; i++)
-            if (a[i] < a[i-1]) return false;
+            if (a[i].compareTo(a[i-1])<0) return false;
         return true;
     }
 }
