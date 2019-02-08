@@ -1,14 +1,19 @@
 package application;
 
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
-import java.util.Collections;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 
 public class Main {
-	
 	public static void main(String [ ] args){
-	
-		//Creamos nuestro scanner
+	   
+		//Creamos nuestro scanner y nuestra impresora
+		PrintWriter impresora = null;
 		Scanner leer = new Scanner(System.in);
+		
 		//Este el sistema para calcular los tiempos de cada uno de los algoritsmos de sort.
 		//Para comenzar pedimos la cantidad de numeros random enteros a ordenar.
 		System.out.println("Bienvenido al sistema de ordenamiento por SORTS.");
@@ -38,15 +43,23 @@ public class Main {
 			lista[i]=(random);
 			
 		}
-
-		int[] listaOrdenada = new int[cantidad];
-		BubbleSort bub = new BubbleSort();
-		listaOrdenada= bub.bubble(lista);
-		for(int i = 0; i < listaOrdenada.length; i = i + 1)
-		{
-			System.out.println(listaOrdenada[i]);
-			
-		}
+		//Imprimimos la lista original en un archivo txt.
+            try {
+				impresora=new PrintWriter("listaOriginal.txt", "UTF-8");
+				for (int i = 0; i < lista.length; i++){
+                impresora.println("Dato" + (i+1) +": " +lista[i]);
+                }
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally{
+				impresora.close();
+            }
+            
+        
+        
+   		 
+		
 		
 
 		//Pruebas de algoritmos
@@ -65,7 +78,7 @@ public class Main {
 		//Radix Sort
 		int[] listaOrdenadaRS = RadixSort.radixsort(lista, lista.length);
 				
-		leer.next();
+		
 		
 		BubbleSort.bubble(listaOrdenadaBS);
 		GnomeSort.gnomeSort(listaOrdenadaGS);
@@ -73,7 +86,19 @@ public class Main {
 		QuickSort.sort(listaOrdenadaQS);
 		RadixSort.radixsort(listaOrdenadaRS, listaOrdenadaRS.length);
 		
-		leer.next();
-
+		
+		//Imprimimos la lista final en un archivo txt.
+        try {
+				impresora=new PrintWriter("listaFinal.txt", "UTF-8");
+				for (int i = 0; i < listaOrdenadaQS.length; i++){
+                	impresora.println("Dato" + (i+1) +": " +lista[i]);
+                }
+		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+		}finally{
+				impresora.close();
+		}
+		System.out.println("Lista original y lista ordenada han sido impresas en archivos txt.");
 	}
 }
