@@ -1,6 +1,8 @@
 package application;
-
 /**
+ * Silvio Orozco 18282
+ * Jose Castaneda 18161
+ * Roberto Castillo 185546
  *
  * Referencia de ayuda;
  * https://www.geeksforgeeks.org/bubble-sort/

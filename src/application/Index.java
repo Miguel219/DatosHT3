@@ -1,5 +1,9 @@
 package application;
-
+/**
+ * Silvio Orozco 18282
+ * Jose Castaneda 18161
+ * Roberto Castillo 185546
+ */
 public class Index<T> implements Comparable<T> {
 
 	private int num;

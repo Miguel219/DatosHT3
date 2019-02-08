@@ -1,6 +1,11 @@
 package application;
 
-/**Referencia:
+/**
+ * Silvio Orozco 18282
+ * Jose Castaneda 18161
+ * Roberto Castillo 185546
+ *
+ *Referencia:
  * @author Robert Sedgewick and Kevin Wayne
  * extraido de http://algs4.cs.princeton.edu/14analysis/Mergesort.java.html
  */
