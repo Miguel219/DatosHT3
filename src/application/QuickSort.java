@@ -9,20 +9,21 @@ package application;
 
 public class QuickSort {
      
-    private int array[];
-    private int length;
+    private static int[] array;
+    private static int length;
  
-    public void sort(int[] inputArr) {
+    static int[] sort(int[] inputArr) {
          
         if (inputArr == null || inputArr.length == 0) {
-            return;
+            return null;
         }
-        this.array = inputArr;
+        array = inputArr;
         length = inputArr.length;
         quickSort(0, length - 1);
+        return array;
     }
  
-    private void quickSort(int lowerIndex, int higherIndex) {
+    static void quickSort(int lowerIndex, int higherIndex) {
          
         int i = lowerIndex;
         int j = higherIndex;
@@ -56,7 +57,7 @@ public class QuickSort {
             quickSort(i, higherIndex);
     }
  
-    private void exchangeNumbers(int i, int j) {
+    static void exchangeNumbers(int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
