@@ -2,10 +2,6 @@ package application;
 
 import java.util.Arrays; 
 
-/**
- * @author pecos
- *
- */
 public class Sorts {
 
 	public Sorts() {
