@@ -38,8 +38,14 @@ public class Main {
 			lista[i]=(random);
 			
 		}
-		
-		
+		int[] listaOrdenada = new int[cantidad];
+		BubbleSort bub = new BubbleSort();
+		listaOrdenada= bub.bubble(lista);
+		for(int i = 0; i < listaOrdenada.length; i = i + 1)
+		{
+			System.out.println(listaOrdenada[i]);
+			
+		}
 		
 	}
 }
