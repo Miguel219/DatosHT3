@@ -1,11 +1,10 @@
 package application;
-
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
-import java.io.File;
+
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
+
 /**
  * Silvio Orozco 18282
  * Jose Castaneda 18161
@@ -41,18 +40,19 @@ public class Main {
 		}while(error==true);
 		//Una vez el dato es entero creamos el numero Random.
 		int random;
-		int[] lista= new int[cantidad]; 
+		//
+		Index<Index>[] lista= new Index[cantidad]; 
 		for(int i = 0; i < cantidad; i = i + 1)
 		{
 			random=(int) (Math.random() * (cantidad-1)) + 1;
-			lista[i]=(random);
+			lista[i].setNum(random);
 			
 		}
 		//Imprimimos la lista original en un archivo txt.
             try {
 				impresora=new PrintWriter("listaOriginal.txt", "UTF-8");
 				for (int i = 0; i < lista.length; i++){
-                impresora.println("Dato" + (i+1) +": " +lista[i]);
+                	impresora.println("Dato" + (i+1) +": " +(lista[i].getNum()));
                 }
 			} catch (FileNotFoundException | UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
@@ -96,7 +96,7 @@ public class Main {
         try {
 				impresora=new PrintWriter("listaFinal.txt", "UTF-8");
 				for (int i = 0; i < listaOrdenadaQS.length; i++){
-                	impresora.println("Dato" + (i+1) +": " +lista[i]);
+                	impresora.println("Dato" + (i+1) +": " +(lista[i].getNum()));
                 }
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
