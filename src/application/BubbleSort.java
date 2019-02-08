@@ -8,7 +8,7 @@ package application;
 public class BubbleSort 
 {
     
-    public int[] bubble(int [] A)
+    public static int[] bubble(int [] A)
     {
          int i, j, aux;
          for(i=0;i<A.length-1;i++)

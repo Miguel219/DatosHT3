@@ -38,6 +38,7 @@ public class Main {
 			lista[i]=(random);
 			
 		}
+
 		int[] listaOrdenada = new int[cantidad];
 		BubbleSort bub = new BubbleSort();
 		listaOrdenada= bub.bubble(lista);
@@ -47,5 +48,32 @@ public class Main {
 			
 		}
 		
+
+		//Pruebas de algoritmos
+		//Bubble Sort
+		int[] listaOrdenadaBS = BubbleSort.bubble(lista);
+			
+		//Gnome Sort
+		int[] listaOrdenadaGS = GnomeSort.gnomeSort(lista);
+			
+		//Merge Sort
+		int[] listaOrdenadaMS = MergeSort.mergesort(lista);
+				
+		//Quick Sort
+		int[] listaOrdenadaQS = QuickSort.sort(lista);
+				
+		//Radix Sort
+		int[] listaOrdenadaRS = RadixSort.radixsort(lista, lista.length);
+				
+		leer.next();
+		
+		BubbleSort.bubble(listaOrdenadaBS);
+		GnomeSort.gnomeSort(listaOrdenadaGS);
+		MergeSort.mergesort(listaOrdenadaMS);
+		QuickSort.sort(listaOrdenadaQS);
+		RadixSort.radixsort(listaOrdenadaRS, listaOrdenadaRS.length);
+		
+		leer.next();
+
 	}
 }
