@@ -1,12 +1,16 @@
-package application;
-
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-
+/**
+ * Silvio Orozco 18282
+ * Jose Castaneda 18161
+ * Roberto Castillo 185546
+ * 
+ * Datos Hoja 3 	Sort y Big O 	8/2/2019
+ */
 public class Main {
 	public static void main(String [ ] args){
 	   
@@ -66,12 +70,6 @@ public class Main {
 			}finally{
 				impresora.close();
             }
-            
-         
-        
-   		 
-		
-		
 
 		//Pruebas de algoritmos
 		//Bubble Sort
@@ -91,11 +89,6 @@ public class Main {
 				
 		
 		
-		BubbleSort.bubble(listaOrdenadaBS);
-		GnomeSort.gnomeSort(listaOrdenadaGS);
-		MergeSort.mergesort(listaOrdenadaMS);
-		QuickSort.sort(listaOrdenadaQS);
-		RadixSort.radixsort(listaOrdenadaRS, listaOrdenadaRS.length);
 		
 		
 		//Imprimimos la lista final en un archivo txt.
